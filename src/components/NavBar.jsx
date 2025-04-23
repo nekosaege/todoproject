@@ -23,7 +23,7 @@ export function NavBar() {
 
 					}}
 				>
-					To do
+					Tasks
 				</button>
 				<button onClick={() => setSection("done")}
           style={{
@@ -35,7 +35,7 @@ export function NavBar() {
 						cursor: "pointer",
             fontFamily: "autography",
             fontSize: "30px"
-					}}>Done</button>
+					}}>Appointments</button>
 				<button onClick={() => setSection("birthdays")}
           style={{
 						padding: "10px 20px",
