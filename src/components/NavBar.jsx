@@ -18,6 +18,9 @@ export function NavBar() {
 						border: "1px solid rgb(81, 200, 213)",
 						borderRadius: "5px",
 						cursor: "pointer",
+            fontFamily: "autography",
+            fontSize: "30px",
+
 					}}
 				>
 					To do
@@ -30,6 +33,8 @@ export function NavBar() {
 						border: "1px solid rgb(81, 200, 213)",
 						borderRadius: "5px",
 						cursor: "pointer",
+            fontFamily: "autography",
+            fontSize: "30px"
 					}}>Done</button>
 				<button onClick={() => setSection("birthdays")}
           style={{
@@ -39,6 +44,8 @@ export function NavBar() {
 						border: "1px solid rgb(81, 200, 213)",
 						borderRadius: "5px",
 						cursor: "pointer",
+            fontFamily: "autography",
+            fontSize: "30px",
 					}}>Birthdays</button>
 			</div>
 		</nav>
