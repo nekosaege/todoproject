@@ -9,11 +9,37 @@ export function NavBar() {
 				<h1> </h1>
 			</div>
 			<div className="navbar__links">
-				<button onClick={() => setSection("todo")}>To do</button>
-				<button onClick={() => setSection("done")}>Done</button>
-				<button onClick={() => setSection("birthdays")}>
-					Birthdays
+				<button
+					onClick={() => setSection("todo")}
+					style={{
+						padding: "10px 20px",
+						backgroundColor: "#ac6464",
+						color: "white",
+						border: "1px solid rgb(81, 200, 213)",
+						borderRadius: "5px",
+						cursor: "pointer",
+					}}
+				>
+					To do
 				</button>
+				<button onClick={() => setSection("done")}
+          style={{
+						padding: "10px 20px",
+						backgroundColor: "#ac6464",
+						color: "white",
+						border: "1px solid rgb(81, 200, 213)",
+						borderRadius: "5px",
+						cursor: "pointer",
+					}}>Done</button>
+				<button onClick={() => setSection("birthdays")}
+          style={{
+						padding: "10px 20px",
+						backgroundColor: "#ac6464",
+						color: "white",
+						border: "1px solid rgb(81, 200, 213)",
+						borderRadius: "5px",
+						cursor: "pointer",
+					}}>Birthdays</button>
 			</div>
 		</nav>
 	);
