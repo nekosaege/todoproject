@@ -4,7 +4,8 @@
     justify-content: space-between ;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #ac6464;
+    background-color: #99304a;
+    border-radius: 50px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -39,8 +40,4 @@
     font-weight: bold;
   }
   
-  @font-face {
-    font-family: autography;
-    src: url('../assets/Autography.otf') format('truetype');
-  }
   

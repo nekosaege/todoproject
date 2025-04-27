@@ -35,7 +35,7 @@ export function NavBar() {
 						cursor: "pointer",
             fontFamily: "autography",
             fontSize: "30px"
-					}}>Appointments</button>
+					}}>About</button>
 				<button onClick={() => setSection("birthdays")}
           style={{
 						padding: "10px 20px",
@@ -46,7 +46,7 @@ export function NavBar() {
 						cursor: "pointer",
             fontFamily: "autography",
             fontSize: "30px",
-					}}>Birthdays</button>
+					}}>xx</button>
 			</div>
 		</nav>
 	);
