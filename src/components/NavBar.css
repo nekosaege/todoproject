@@ -1,16 +1,4 @@
-.navbar {
-    width: 800px;
-    display: flex;
-    justify-content: space-between ;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #99304a;
-    border-radius: 50px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 
-  }
   
   .navbar__logo {
     display: flex;

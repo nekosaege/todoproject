@@ -1,4 +1,4 @@
-import tasks from "./tasks.json";
+import tasks from "../components/tasks.json";
 import { useState } from "react";
 
 function Tasks() {
@@ -7,7 +7,7 @@ function Tasks() {
 
 	function handleInputChange(e) {
 		setNewTask(e.target.value);
-	}
+	};
 	function addTask() {
 		if (newTask.trim() === "") return;
 		setTaskList([...taskList, { task: newTask, completed: false }]);
@@ -16,42 +16,47 @@ function Tasks() {
 	function deleteTask(index) {
 		const tasksUpdated = taskList.filter((_, i) => i !== index);
 		setTaskList(tasksUpdated);
-	}
+	};
 
 	function setAsComplete(index) {
 		const updatedTasks = [...taskList];
 		updatedTasks[index].completed = !updatedTasks[index].completed;
 		setTaskList(updatedTasks);
-	}
+	};
+	const handleFormSubmit=(e)=>{
+		e.preventDefault();
+		addTask();
+	};
 	return (
 		<div>
 			<div className="to-do-list">
 				<h1>Task List</h1>
-				<input
-					type="text"
-					placeholder="Add your new task"
-					value={newTask}
-					onChange={handleInputChange}
-				/>
-				<button className="add-button" onClick={addTask}>
-					🆕
-				</button>
+				<form onSubmit={handleFormSubmit}>
+					<input
+						type="text"
+						placeholder="Add your new task"
+						value={newTask}
+						onChange={handleInputChange}
+					/>
+					<button className="add-button" onClick={addTask} style={{ marginRight: "1rem", color: "#333"}}>
+						Add
+					</button>
+				</form>
 			</div>
 
-			<ol>
+			<ol className="blabla">
 				{taskList.map((taskObj, index) => (
-					<li key={index}>
+					<li key={taskObj.id}>
 						<span className={taskObj.completed ? "text completed" : "text"}>
 							{taskObj.task}
 						</span>
-						<button className="delete-button" onClick={() => deleteTask(index)}>
+						<button className="delete-button" onClick={() => deleteTask(index)} style={{ marginRight: "1rem", color: "#333"}}>
 							❌
 						</button>
 
 						<button
 							className="check-button"
-							onClick={() => setAsComplete(index)}
-						>
+							onClick={() => setAsComplete(index)}style={{ marginRight: "1rem", color: "#333"}}>
 							✔️
 						</button>
 					</li>

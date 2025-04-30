@@ -1,9 +1,20 @@
 body {
-  background-color: #ffb39e;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 .to-do-list {
+  background-color: #333;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   text-align: center;
   margin-top: 100px;
 }
@@ -21,24 +32,12 @@ button {
   cursor: pointer;
 }
 
-.add-button {
-  background-color: #742240;
-}
-
 .add-button:hover {
   background-color: #307499;
 }
 
-.delete-button {
-  background-color: #99304a;
-}
-
 .delete-button:hover {
   background-color: #ea7d39;
-}
-
-.check-button {
-  background-color: #ff7b80;
 }
 
 .check-button:hover {
@@ -49,4 +48,20 @@ button {
   text-decoration: line-through;
   opacity: 0.6;
   color: #685e07;
+}
+.home-button:hover{
+  background-color: #307499;
+  
+}
+.about-button:hover{
+  background-color: #307499;
+  
+}
+.contact-button:hover{
+  background-color: #307499;
+  
+}
+.blabla {
+  list-style-position: inside;
+  padding: 0;
 }
