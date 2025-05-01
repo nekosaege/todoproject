@@ -1,10 +1,12 @@
 import logo from "../assets/image.png";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import { Button } from '@mantine/core';
+
 
 export function NavBar() {
 	return (
-		<nav className="navbar" style={{backgroundColor: "#1e1e1e",
+		<nav className="navbar" style={{
 			padding: "1rem",
 			display: "flex",
 			justifyContent:"space-between",
@@ -17,22 +19,25 @@ export function NavBar() {
 			</div>
 			<div className="navbar__links">
 				<Link to="/">
-					<button className="home-button"
-						style={{ marginRight: "1rem", color: "#333"}}>
+					<Button className="home-button"
+						variant="gradient"
+						gradient={{ from: 'yellow', to: 'violet', deg: 131 }}>
 						Home
-					</button>
+					</Button>
 				</Link>
 				<Link to="/about">
-					<button className="about-button"
-						style={{ marginRight: "1rem", color: "#333"}}>
+					<Button className="about-button"
+						variant="gradient"
+						gradient={{ from: 'yellow', to: 'violet', deg: 131 }}>
 						About
-					</button>
+					</Button>
 				</Link>
 				<Link to="/contact">
-				<button className="contact-button"
-					style={{ marginRight: "1rem", color: "#333"}}>
+				<Button className="contact-button"
+					variant="gradient"
+					gradient={{ from: 'yellow', to: 'violet', deg: 131 }}>
 					Contact
-				</button>
+				</Button>
 				</Link>
 			</div>
 		</nav>

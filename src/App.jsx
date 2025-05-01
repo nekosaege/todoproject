@@ -7,26 +7,31 @@ import About from "./Pages/About";
 import ErrorPage from "./ErrorPage";
 import { Footer } from "./components/Footer";
 import Contact from "./Contact";
-
+import EditTasks from "./Pages/EditTasks";
+import tasks from "./components/tasks.json";
+import '@mantine/core/styles.css';
+import { MantineProvider } from '@mantine/core';
 function App() {
-    const [count, setCount] = useState(0);
-
-    return (
+    const [taskList, setTaskList] = useState(tasks);
+return (
+    <MantineProvider>
         <>
             <NavBar />
-			
+            
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/tasks" element={<Tasks />} />
-                <Route path="/about" element={<About />} />
-				<Route path="/contact" element={<Contact />} />
+                <Route path="/tasks" element={<Tasks taskList={taskList} setTaskList={setTaskList} />} />
+                <Route path="/About" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<ErrorPage />} />
+                <Route path="/edittask/:id" element={<EditTasks taskList={taskList} setTaskList={setTaskList} />} />           
             </Routes>
+            
 
 
-
-			<Footer />
+            <Footer />
         </>
+    </MantineProvider>
     );
 }
 

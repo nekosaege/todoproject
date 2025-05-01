@@ -1,13 +1,14 @@
 import tasks from "../components/tasks.json";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Flex, Button, TextInput, Card } from "@mantine/core";
 
-function Tasks() {
-	const [taskList, setTaskList] = useState(tasks);
+function Tasks({ taskList, setTaskList }) {
 	const [newTask, setNewTask] = useState("");
 
 	function handleInputChange(e) {
 		setNewTask(e.target.value);
-	};
+	}
 	function addTask() {
 		if (newTask.trim() === "") return;
 		setTaskList([...taskList, { task: newTask, completed: false }]);
@@ -16,14 +17,14 @@ function Tasks() {
 	function deleteTask(index) {
 		const tasksUpdated = taskList.filter((_, i) => i !== index);
 		setTaskList(tasksUpdated);
-	};
+	}
 
 	function setAsComplete(index) {
 		const updatedTasks = [...taskList];
 		updatedTasks[index].completed = !updatedTasks[index].completed;
 		setTaskList(updatedTasks);
-	};
-	const handleFormSubmit=(e)=>{
+	}
+	const handleFormSubmit = (e) => {
 		e.preventDefault();
 		addTask();
 	};
@@ -32,36 +33,78 @@ function Tasks() {
 			<div className="to-do-list">
 				<h1>Task List</h1>
 				<form onSubmit={handleFormSubmit}>
-					<input
-						type="text"
-						placeholder="Add your new task"
+					<TextInput
+						placeholder="Write your task here..."
 						value={newTask}
 						onChange={handleInputChange}
 					/>
-					<button className="add-button" onClick={addTask} style={{ marginRight: "1rem", color: "#333"}}>
+					<Button
+						className="add-button"
+						onClick={addTask}
+						variant="gradient"
+						gradient={{ from: "yellow", to: "violet", deg: 131 }}
+					>
 						Add
-					</button>
+					</Button>
 				</form>
 			</div>
 
-			<ol className="blabla">
+			<Flex gap="md" justify="flex-start" align="flex-start" wrap="wrap">
 				{taskList.map((taskObj, index) => (
-					<li key={taskObj.id}>
-						<span className={taskObj.completed ? "text completed" : "text"}>
-							{taskObj.task}
-						</span>
-						<button className="delete-button" onClick={() => deleteTask(index)} style={{ marginRight: "1rem", color: "#333"}}>
-							❌
-						</button>
+					<Card
+						key={taskObj.id}
+						shadow="sm"
+						padding="lg"
+						radius="md"
+						withBorder
+						style={{ width: 250 }}
+					>
+						<Card.Section>
+							<span
+								style={{
+									textDecoration: taskObj.completed ? "line-through" : "none",
+									fontWeight: "bold",
+									fontSize: "1.2rem",
+								}}
+							>
+								{taskObj.task}
+							</span>
+						</Card.Section>
 
-						<button
-							className="check-button"
-							onClick={() => setAsComplete(index)}style={{ marginRight: "1rem", color: "#333"}}>
-							✔️
-						</button>
-					</li>
+						<Flex
+							gap="sm"
+							justify="center"
+							align="center"
+							direction="row"
+							wrap="wrap"
+							mt="md"
+						>
+							<Button
+								onClick={() => deleteTask(index)}
+								variant="gradient"
+								gradient={{ from: "yellow", to: "violet", deg: 131 }}
+							>
+								❌
+							</Button>
+							<Button
+								onClick={() => setAsComplete(index)}
+								variant="gradient"
+								gradient={{ from: "yellow", to: "violet", deg: 131 }}
+							>
+								✔️
+							</Button>
+							<Link to={`/edittask/${taskObj.id}`}>
+								<Button
+									variant="gradient"
+									gradient={{ from: "yellow", to: "violet", deg: 131 }}
+								>
+									Edit
+								</Button>
+							</Link>
+						</Flex>
+					</Card>
 				))}
-			</ol>
+			</Flex>
 		</div>
 	);
 }

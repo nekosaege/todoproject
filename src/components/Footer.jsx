@@ -2,7 +2,6 @@
 export function Footer() {
 	return (
 		<footer className="footer" style={{
-            backgroundColor: "#1e1e1e",
             textAlign: "center",
             padding: "1rem",
             fontSize: "0.9rem",

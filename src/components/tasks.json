@@ -1,9 +1,30 @@
 [
-  { "task": "Read the project brief ", "completed": true},
-  { "task": "Create a project repository ", "completed": false},
-  { "task": "Create React application using Vite ", "completed": false},
-  { "task": "Finish Day 1 Development Tasks ", "completed": false},
-  { "task": "Finish Day 1 Research Tasks ", "completed": false},
-  { "task": "Finish Day 2 Development Tasks ", "completed": false},
-  { "task": "Finish Day 2 Research Tasks ", "completed": false}
+  { 
+    "id": 1,
+    "task": "Breakfast ", 
+    "completed": false},
+  { 
+    "id": 2,
+    "task": "Bootcamp ", 
+    "completed": false},
+  { 
+    "id": 3,
+    "task": "LAB ", 
+    "completed": false},
+  { 
+    "id": 4,
+    "task": "Shopping ", 
+    "completed": false},
+  { 
+    "id": 5,
+    "task": "Shower ", 
+    "completed": false},
+  { 
+    "id": 6,
+    "task": "Cook ", 
+    "completed": false},
+  { 
+    "id": 7,
+    "task": "Invite friends for netflix ", 
+    "completed": false}
 ]
